@@ -26,3 +26,10 @@ then
 else
     python3 -m pip install --user ansible=VERSION
 fi
+
+# add local to path
+if [[ $(echo $PATH | egrep -w .local) == '' ]];
+then
+    chmod +x set-path.sh
+    ./set-path.sh
+fi
