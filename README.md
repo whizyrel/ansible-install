@@ -20,6 +20,7 @@ chmod +x ansible.sh
 ```
 
 Install latest
+
 ```bash
 ./ansible.sh
 ```
