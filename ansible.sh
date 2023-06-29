@@ -2,8 +2,9 @@
 
 set -e
 
-readarray -td "=", VER <<<"$1"; declare VER;
-VERSION=${VER[1]}
+# readarray -td "=", VER <<<"$1"; declare VER;
+VERSION=$1
+# VERSION=${VER[1]}
 PYTHON3EXISTS=$(echo $(which python3))
 
 if [[ $PYTHON3EXISTS == '' ]];
@@ -24,11 +25,11 @@ if [[ $1 == '' ]];
 then
     python3 -m pip install --user ansible
 else
-    python3 -m pip install --user ansible=VERSION
+    python3 -m pip install --user ansible=$VERSION
 fi
 
 # add local to path
-if [[ $(echo $PATH | egrep -w .local) == '' ]];
+if [[ $(echo $PATH | egrep -w Library/Python/3.10/bin) == '' ]];
 then
     chmod +x set-path.sh
     ./set-path.sh

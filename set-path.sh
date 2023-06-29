@@ -1,11 +1,6 @@
-cat << EOF >> $HOME/.bashrc
+cat << EOF >> $HOME/.zshrc
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
+if [ -d "$HOME/Library" ] ; then
+    PATH="$HOME/Library/Python/3.10/bin:$PATH"
 fi
 EOF
